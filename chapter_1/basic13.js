@@ -50,3 +50,69 @@ for (let i = 1; i < 256; i++) {
   }
 }
 console.log(`The odds Array: ${oddsArray}`);
+
+// Greater Than Y - Given and array and a value Y, count and print the number of array values greater then Y
+function greaterThanY(arr, y) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > y) {
+      count += 1;
+    }
+  }
+  return count;
+}
+const arr = [45, 55, 66, 151, 10000, 2, 1, 78, 49, 506, 789, 214, 92];
+const y = 45;
+console.log(`Values greater than ${y} are: ${greaterThanY(arr, y)}`);
+
+// Max, Min and Avg - Given an array return the max, min and avg values for that array
+
+// The long way
+function minMaxAvg(arr) {
+  let sum = 0;
+  let min = 999999999999;
+  let max = -999999999999;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  let avg = Math.round(sum / arr.length);
+  return `The min is: ${min}. The max is: ${max}. The avg is: ${avg}`;
+}
+
+const values = [45, 55, 66, 151, 10000, 2, -856, 78, 49, 506, 789, 214, 92];
+console.log(minMaxAvg(values));
+
+// A shorter way
+function shorterMinMaxAvg(arr) {
+  let sum = 0;
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+  for (let i of arr) {
+    sum += i;
+  }
+  console.log(sum);
+  let avg = Math.round(sum / arr.length);
+  return `The min is: ${min}. The max is: ${max}. The avg is: ${avg}`;
+}
+console.log("Shorter option");
+console.log(shorterMinMaxAvg(values));
+
+// Swap string for Array Negative Values - Replace any negative array values with 'Dojo'
+
+function replaceNeg(arr) {
+  arr.forEach(function (curVal, idx) {
+    if (curVal < 0) {
+      arr[idx] = "Dojo";
+    }
+  });
+  return arr;
+}
+
+const negArr = [45, -55, 66, -151, 10000, 2, -856, 78, 49, -506, -789, 214, 92];
+console.log(replaceNeg(negArr));
