@@ -91,3 +91,11 @@ def replace_neg(arr):
 negArr = [45, -55, 66, -151, 10000, 2, -856, 78, 49, -506, -789, 214, 92]
 print('This is a list Dojo for neg values')
 print(replace_neg(negArr))
+
+
+# Print odds 1 - 255
+j = 0
+while j < 256:
+    if j % 2 != 0:
+        print(j)
+    j += 1

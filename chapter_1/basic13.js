@@ -116,3 +116,50 @@ function replaceNeg(arr) {
 
 const negArr = [45, -55, 66, -151, 10000, 2, -856, 78, 49, -506, -789, 214, 92];
 console.log(replaceNeg(negArr));
+
+// Print odds 1 - 255
+let j = 1;
+while (j < 256) {
+  if (j % 2 != 0) {
+    console.log(j);
+  }
+  j += 1;
+}
+
+// iterate through array print each element
+function printArray(arr) {
+  for (let val of arr) {
+    console.log(val);
+  }
+}
+
+const clMe = [
+  "Teddy",
+  -55,
+  66,
+  -151,
+  10000,
+  2,
+  -856,
+  78,
+  49,
+  -506,
+  -789,
+  214,
+  92,
+  "Today",
+  "Hello",
+  45,
+  "foo",
+];
+
+console.log("Print all values of an Array");
+console.log(replaceNeg(clMe));
+
+// Get and print average of an array
+let total = 0;
+function getAvg(arr) {
+  arr.forEach();
+}
+
+arrayValues = [10, 20, 30, 40, 50];
