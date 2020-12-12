@@ -99,3 +99,34 @@ while j < 256:
     if j % 2 != 0:
         print(j)
     j += 1
+
+# Get and print the average of the array 
+arr_values = [10, 20, 30, 40, 50]
+
+
+def return_avg(arr):
+    total = 0
+    for i in arr_values:
+        total += i
+    return total / len(arr)
+
+print(f'The average is: {return_avg(arr_values)}')
+
+
+# Square the Values
+# Square each value in a given array, returning that same array with changed values
+
+square_arr = [10, 15, 25, 45, 35, 2, 6, 78, 45, 100, 55, 99]
+
+# Using a for loop
+def square_me(arr):
+    for idx,val in enumerate(arr):
+        arr[idx] = arr[idx] ** 2
+    return print(f'Using a for-loop: {arr}')
+
+print(square_me(square_arr))
+
+# Using map similar to JS
+square = [10, 15, 25, 45, 35, 2, 6, 78, 45, 100, 55, 99]
+squared_list = list(map(lambda x: x **2, square))
+print(f'Using the map() and list() method: {squared_list}')

@@ -157,9 +157,45 @@ console.log("Print all values of an Array");
 console.log(replaceNeg(clMe));
 
 // Get and print average of an array
-let total = 0;
-function getAvg(arr) {
-  arr.forEach();
+
+// One way to get the average
+const arrayValues = [10, 20, 30, 40, 50];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+const avgArr = arrayValues.reduce(reducer, 0);
+console.log(avgArr / arrayValues.length);
+
+// Another way to get the average
+let sumVal = 0;
+function returnAvg(arr) {
+  for (let i = 0; i < arrayValues.length; i++) {
+    sumVal += arr[i];
+  }
+  return sumVal / arr.length;
 }
 
-arrayValues = [10, 20, 30, 40, 50];
+console.log(`The average is: ${returnAvg(arrayValues)}`);
+
+// Square the Values
+// Square each value in a given array, returning that same array with changed values
+
+// Solved using arrow function and map()
+const squareArr = [10, 15, 25, 45, 35, 2, 6, 78, 45, 100, 55, 99];
+const square = squareArr.map((squareArr) => squareArr ** 2);
+console.log("---------------------------");
+console.log("Return the array squared");
+console.log(square);
+
+// Solved using for
+function squareMe(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i] ** 2;
+  }
+  return arr;
+}
+
+console.log(`Using for-loop: ${squareMe(squareArr)}`);
+
+// Shift Array Values
+// Given an array, move all values forward by one index. dropping the first and leaving a '0' value at the end.
+
+const abcArr = ["A", "B", "C", "D", "E", "F"];
