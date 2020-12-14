@@ -39,3 +39,24 @@ def threes_fives():
 
 print(f'The total sum is: {threes_fives()}')
 
+print('-'*45)
+print('Fibonacci Numbers')
+
+def fibonacci(num):
+    n1, n2, fibNum, fibSum = 1, 1, 1, 2
+    for i in range(3, num+1):
+        if num == 0:
+            return fibNum, fibSum -1 
+        elif num == 1:
+            return fibNum, fibSum
+        else:
+            print(f'n = {i} >> n1 = {n1} n2 = {n2}')
+            fibNum = n2 + n1;
+            print(f'fib num  is {fibNum}\n')
+            n1 = n2
+            n2 = fibNum
+            fibSum += n2
+    return f'The Fibonacci Number for {num} is: {fibNum}\nThe Fibonacci Sum is {fibSum}\n'
+
+print(fibonacci(9));
+        

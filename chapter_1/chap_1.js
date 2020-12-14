@@ -45,3 +45,30 @@ function threesFives() {
 }
 
 console.log(`Total sum is: ${threesFives()}`);
+
+console.log("--------------------------");
+// Fibonacci Numbers
+
+function fibonacci(num) {
+  let n1 = 1,
+    n2 = 1,
+    fibNum = 1,
+    fibSum = 2;
+  for (let i = 3; i <= num; i++) {
+    if (num === 0) {
+      return fibNum, fibSum - 1;
+    } else if (num === 1 || num === 2) {
+      return fibNum, fibSum;
+    } else {
+      console.log(`n = ${i} >> n1 = ${n1} n2 = ${n2}`);
+      fibNum = n2 + n1;
+      console.log(`fib num  is ${fibNum}\n`);
+      n1 = n2;
+      n2 = fibNum;
+      fibSum += n2;
+    }
+  }
+  return `The Fibonacci Number for ${num} is: ${fibNum}\nThe Fibonacci Sum is ${fibSum}\n`;
+}
+
+console.log(fibonacci(9));
