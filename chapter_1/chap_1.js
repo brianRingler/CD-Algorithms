@@ -46,6 +46,43 @@ function threesFives() {
 
 console.log(`Total sum is: ${threesFives()}`);
 
+// Generate Coin Change
+console.log(" Generate Coin Change -------------\n");
+
+// change takes an integer cents and returns the smallest combination of coins
+// e.g., $1.00 or 100 cents is equal to 4 quarters
+function change(cents = 0) {
+  let quart = 0;
+  let dime = 0;
+  let nick = 0;
+  let pen = 0;
+  // convert to int if string or float
+  cents = parseInt(cents);
+  quart = Math.floor(cents / 25);
+  cents = cents - quart * 25;
+  if (cents === 0) {
+    return `Change returned: ${quart} quarters, ${dime} dimes, ${nick} nickles and ${pen} pennies. `;
+  }
+  dime = Math.floor(cents / 10);
+  cents = cents - dime * 10;
+  if (cents === 0) {
+    return `Change returned: ${quart} quarters, ${dime} dimes, ${nick} nickles and ${pen} pennies. `;
+  }
+  nick = Math.floor(cents / 5);
+  cents = cents - nick * 5;
+  if (cents === 0) {
+    return `Change returned: ${quart} quarters, ${dime} dimes, ${nick} nickles and ${pen} pennies. `;
+  }
+  pen = Math.floor(cents / 1);
+  cents = cents - pen * 1;
+  if (cents === 0) {
+    return `Change returned: ${quart} quarters, ${dime} dimes, ${nick} nickles and ${pen} pennies. `;
+  }
+}
+
+console.log("Change Returned >>");
+console.log(change(116));
+
 console.log("--------------------------");
 // Fibonacci Numbers
 
@@ -71,4 +108,44 @@ function fibonacci(num) {
   return `The Fibonacci Number for ${num} is: ${fibNum}\nThe Fibonacci Sum is ${fibSum}\n`;
 }
 
+// Statistic Doubles
+// Implement a ‘die’ that randomly returns an integer between 1 and 6 inclusive. # /// Roll a pair of these dice, tracking the statistics until doubles are rolled.     // Display the number of rolls, min, max, and average
+console.log();
+console.log("Statistic Doubles ------------");
+
+function die() {
+  let double = false;
+  let roll_count = 0;
+  while (!double) {
+    roll_1 = Math.trunc(Math.random() * 6) + 1;
+    roll_2 = Math.trunc(Math.random() * 6) + 1;
+    console.log(`${roll_1} and ${roll_2}`);
+    if (roll_1 === roll_2) {
+      roll_count += 1;
+      double = true;
+    } else {
+      roll_count += 1;
+    }
+  }
+  return `You rolled double ${roll_1}'s. It took ${roll_count} 🎲`;
+}
+
+console.log(die());
+console.log();
+
 console.log(fibonacci(9));
+
+console.log("Last Digit of A the the B\n");
+
+function lastDigit(a = 0, b = 0) {
+  if (a < 0 || b < 0) {
+    console.log("Sorry, non-negative values only");
+  } else {
+    let total = 0;
+    total = a ** b;
+    total = total.toString();
+    return total.slice(total.length - 1);
+  }
+}
+
+console.log(lastDigit(5, 9));
